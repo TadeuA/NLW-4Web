@@ -6,9 +6,9 @@ import GlobalStyles from '../styles/global';
 import { ChallengeProvider, useChallenge } from './challenge';
 import { CountdownProvider, useCountdown } from './countdown';
 
-const AppProvider: React.FC<ProviderProps> = ({
+const AppProvider: React.FC = ({
   children,
-}: React.ReactNode) => {
+}) => {
   return (
     <ThemeProvider theme={Theme}>
       <GlobalStyles />
