@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react';
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
-import { HomeProps } from './inerface';
+import HomeProps from './interface';
 import { CountdownProvider, ChallengeProvider } from '../hooks';
 import {
   ExperienceBar,
@@ -12,11 +14,8 @@ import {
 } from '../components';
 import { Container } from './styles';
 
-const Home: React.FC<HomeProps> = ({
-  level,
-  currentExperience,
-  challengesCompleted,
-}: HomeProps) => {
+export default function Home(props: HomeProps) {
+  const { level, currentExperience, challengesCompleted } = props;
   return (
     <ChallengeProvider
       level={level}
@@ -41,8 +40,7 @@ const Home: React.FC<HomeProps> = ({
       </CountdownProvider>
     </ChallengeProvider>
   );
-};
-export default Home;
+}
 export const getServerSideProps: GetServerSideProps = async context => {
   const { level, currentExperience, challengesCompleted } = context.req.cookies;
 

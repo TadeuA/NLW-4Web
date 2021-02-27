@@ -12,18 +12,16 @@ import { LevelUpModal } from '../components';
 
 const ChallengeContext = createContext({} as ChallengeContextDate);
 
-export const ChallengeProvider: React.FC = ({
+export function ChallengeProvider({
   children,
-  level: userLevel,
-  currentExperience: useCurrentExperience,
-  challengesCompleted: userChallengesCompleted,
-}: ChallengeProviderProps) => {
-  const [level, setLevel] = useState(userLevel ?? 1);
+  ...rest
+}: ChallengeProviderProps) {
+  const [level, setLevel] = useState(rest.level ?? 1);
   const [currentExperience, setCurrentExperience] = useState(
-    useCurrentExperience ?? 0,
+    rest.currentExperience ?? 0,
   );
   const [challengesCompleted, setChallengesCompleted] = useState(
-    userChallengesCompleted ?? 0,
+    rest.challengesCompleted ?? 0,
   );
   const [activeChallenge, setActiveChallenge] = useState(null);
   const [isLevelUpModalOpen, setIsLevelModalUp] = useState(false);
@@ -107,7 +105,7 @@ export const ChallengeProvider: React.FC = ({
       {isLevelUpModalOpen && <LevelUpModal />}
     </ChallengeContext.Provider>
   );
-};
+}
 
 export function useChallenge(): ChallengeContextDate {
   const context = useContext(ChallengeContext);
