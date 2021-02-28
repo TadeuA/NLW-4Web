@@ -106,8 +106,8 @@ Você deve ter instalado em sua maquina o `npm` ou `yarn` e `git`!
 
 ## Como usar
 
- <img src=".github/images/2.gif" alt="app" width="4000" height="200">
- <img src=".github/images/1.gif" alt="app" width="4000" height="200">
+ <img src=".github/images/2.gif" alt="app" width="400" height="200">
+ <img src=".github/images/1.gif" alt="app" width="400" height="200">
 
 <!-- ROADMAP -->
 
