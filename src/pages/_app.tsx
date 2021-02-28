@@ -4,14 +4,10 @@
 import React from 'react';
 import AppProvider from '../hooks';
 
-import { Page } from './styles';
-
 export default function MyApp({ Component, pageProps }) {
   return (
     <AppProvider>
-      <Page>
-        <Component {...pageProps} />
-      </Page>
+      <Component {...pageProps} />
     </AppProvider>
   );
 }

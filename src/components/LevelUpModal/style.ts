@@ -35,7 +35,6 @@ export const Container = styled.div`
     top: 0.5rem;
     background: transparent;
     border: 0;
-    font-size: 0;
   }
 `;
 

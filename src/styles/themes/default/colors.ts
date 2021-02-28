@@ -6,12 +6,20 @@ export const colors = {
   'text-highlight': '#B2B9FF',
   title: '#2E384D',
   text: '#666',
+  'blue-text': '#B2B9FF',
   'gray-line': '#DCDDE0',
   background: '#F2F3F5',
   white: '#FFF',
   black: '#000',
+
   // únicas na app
   'border-complete-challenges': '#D7D8DA',
   'border-number-clock': '#F0F1F3',
   'gray-background-opaque': 'rgba(242, 243, 245, 0.8)',
+  'background-gradient': 'rgba(73, 83, 184, 1) 0% rgba(73, 83, 184, 0.2) 100%',
+  'background-fail': '#FFF5F5',
+  'background-success': '#F7FFF5',
+  line: '#C4C4C4',
+  'background-nav': 'rgba(255, 255, 255, 1) 0% rgba(255, 255, 255, 0) 100%',
+  'border-blue': '#414AA3',
 };

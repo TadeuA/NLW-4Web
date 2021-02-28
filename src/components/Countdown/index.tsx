@@ -1,9 +1,10 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React from 'react';
 
+import { FiX } from 'react-icons/fi';
+import { FaPlay } from 'react-icons/fa';
+import { MdCheckCircle } from 'react-icons/md';
 import { Container, Button } from './styles';
 import { useCountdown } from '../../hooks';
-
-let countdownTimeout: NodeJS.Timeout;
 
 const Countdown: React.FC = () => {
   const {
@@ -13,9 +14,11 @@ const Countdown: React.FC = () => {
     isActive,
     resetCountdown,
     startCountdown,
+    time,
   } = useCountdown();
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
+
   return (
     <>
       <Container>
@@ -31,15 +34,25 @@ const Countdown: React.FC = () => {
       </Container>
       {hasFinished ? (
         <>
-          <Button disabled>Ciclo Finalizado</Button>
+          <Button disabled>
+            Ciclo Finalizado
+            <MdCheckCircle size="1.25rem" />
+          </Button>
           <div />
         </>
       ) : isActive ? (
-        <Button onClick={resetCountdown} color="white">
-          Abandonar Ciclo
-        </Button>
+        <>
+          <Button time={time} onClick={resetCountdown} color="white">
+            Abandonar Ciclo
+            <FiX size="1.25rem" />
+          </Button>
+          <div />
+        </>
       ) : (
-        <Button onClick={startCountdown}>Iniciar Ciclo</Button>
+        <Button onClick={startCountdown}>
+          Iniciar Ciclo
+          <FaPlay size="0.875rem" />
+        </Button>
       )}
     </>
   );

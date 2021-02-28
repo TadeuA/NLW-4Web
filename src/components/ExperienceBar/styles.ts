@@ -4,6 +4,7 @@ import { StylesProps } from './interface';
 export const Container = styled.header<StylesProps>`
   display: flex;
   align-items: center;
+  margin-bottom:1.5rem;
   >span{
     margin-right:10px;
   }

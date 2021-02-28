@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 
 import { Container } from './styles';
-import DefaultButton from '../atoms/DefaultButton';
 
 import { useChallenge, useCountdown } from '../../hooks';
 
@@ -21,9 +20,9 @@ const ChallengeBox: React.FC = () => {
   }, [resetChallenge, resetCountdown]);
   return (
     <Container active>
-      <div>
-        {activeChallenge ? (
-          <>
+      {activeChallenge ? (
+        <>
+          <div>
             <header>Ganhe {activeChallenge.amount} xp</header>
             <main>
               <img
@@ -33,25 +32,25 @@ const ChallengeBox: React.FC = () => {
               <strong>Novo Desáfio</strong>
               <p>{activeChallenge.description}</p>
             </main>
-            <footer>
-              <DefaultButton color="red" onClick={handleChallengeFailed}>
-                Falhei
-              </DefaultButton>
-              <DefaultButton color="green" onClick={handleChallengeSucceded}>
-                Completei
-              </DefaultButton>
-            </footer>
-          </>
-        ) : (
-          <>
-            <strong>Finalize um ciclo para receber um desafio</strong>
-            <aside>
-              <img src="icons/level-up.svg" alt="level Up" />
-              <p>Avance de leve completando desáfios.</p>
-            </aside>
-          </>
-        )}
-      </div>
+          </div>
+          <footer>
+            <button type="button" onClick={handleChallengeFailed}>
+              Falhei
+            </button>
+            <button type="button" onClick={handleChallengeSucceded}>
+              Completei
+            </button>
+          </footer>
+        </>
+      ) : (
+        <div>
+          <strong>Finalize um ciclo para receber um desafio</strong>
+          <aside>
+            <img src="icons/level-up.svg" alt="level Up" />
+            <p>Avance de leve completando desáfios.</p>
+          </aside>
+        </div>
+      )}
     </Container>
   );
 };

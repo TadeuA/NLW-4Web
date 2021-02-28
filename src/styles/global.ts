@@ -12,16 +12,21 @@ export default createGlobalStyle`
     background:${({ theme }) => theme.colors.background};
     font:${({ theme }) => theme.fonts.regular};
     color:${({ theme }) => theme.colors.text};
-    padding-top:2rem;
+
   }
 
   button{
     font: ${({ theme }) => theme.fonts['semi-bold']};
     cursor: pointer;
     color: ${({ theme }) => theme.colors.white};
+    line-height: 0;
   }
   input{
-    font: ${({ theme }) => theme.fonts.medium};
+    font: ${({ theme }) => theme.fonts.regular};
+    padding-left:1rem;
+    &::placeholder{
+      color: ${({ theme }) => theme.colors['blue-text']};
+    }
   }
   h1,h2,h3,h4,h5,h6{
     color: ${({ theme }) => theme.colors.title}
@@ -31,7 +36,7 @@ export default createGlobalStyle`
     text-decoration: none;
   }
 
- 
+
   @media(max-width:1080px){
     html{
       font-size: 93.75%

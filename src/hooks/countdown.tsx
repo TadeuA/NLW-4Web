@@ -14,7 +14,7 @@ let countdownTimeout: NodeJS.Timeout;
 export const CountdownProvider: React.FC = ({ children }: ProviderProps) => {
   const { startNewChallenge } = useChallenge();
 
-  const [time, setTime] = useState(0.1 * 60);
+  const [time, setTime] = useState(25 * 60);
   const [isActive, setIsActive] = useState(false);
   const [hasFinished, setHasFinished] = useState(false);
   const minutes = Math.floor(time / 60);
@@ -52,6 +52,7 @@ export const CountdownProvider: React.FC = ({ children }: ProviderProps) => {
         seconds,
         startCountdown,
         resetCountdown,
+        time,
       }}
     >
       {children}

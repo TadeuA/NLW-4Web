@@ -4,6 +4,7 @@ import CompleteChallenges from './CompleteChallenges';
 import Countdown from './Countdown';
 import ChallengeBox from './ChallengeBox';
 import LevelUpModal from './LevelUpModal';
+import NavBar from './NavBar';
 
 export {
   Profile,
@@ -12,4 +13,5 @@ export {
   Countdown,
   ChallengeBox,
   LevelUpModal,
+  NavBar,
 };

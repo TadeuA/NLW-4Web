@@ -1,22 +1,22 @@
 import React from 'react';
-
-import { Conteiner } from './styles';
+import { ProfileProps } from './interface';
+import { Container } from './styles';
 import { useChallenge } from '../../hooks';
 
-const Profile: React.FC = () => {
+const Profile: React.FC<ProfileProps> = ({ name, image }: ProfileProps) => {
   const { level } = useChallenge();
 
   return (
-    <Conteiner>
-      <img src="https://github.com/TadeuA.png" alt="Tadeu Agostini" />
+    <Container>
+      <img src={image} alt={name} />
       <div>
-        <strong>Tadeu Agostini</strong>
+        <strong>{name}</strong>
         <p>
           <img src="icons/level.svg" alt="level" />
           Level {level}
         </p>
       </div>
-    </Conteiner>
+    </Container>
   );
 };
 

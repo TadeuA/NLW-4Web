@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiX } from 'react-icons/fi';
 import { Container, Olverlay } from './style';
 import { useChallenge } from '../../hooks';
 
@@ -12,7 +13,7 @@ const LevelUpModal: React.FC = () => {
         <p>Você alcançou um novo level.</p>
 
         <button type="button" onClick={() => setIsLevelModalUp(false)}>
-          <img src="/icons/close.svg" alt="Frechar" />
+          <FiX size="0.875rem" />
         </button>
       </Container>
     </Olverlay>

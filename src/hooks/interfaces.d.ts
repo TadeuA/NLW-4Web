@@ -35,4 +35,5 @@ export interface CountdownContextDate {
   seconds: number;
   startCountdown: () => void;
   resetCountdown: () => void;
+  time: number;
 }
