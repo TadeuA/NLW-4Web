@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://gotomato-dn3pbpm16-tadeua.vercel.app/">
     <img src=".github/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
